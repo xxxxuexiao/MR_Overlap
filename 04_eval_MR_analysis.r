@@ -51,21 +51,7 @@ path_winner_decor_mr = "/mnt/data/xue/Data/04_MR_Overlap/02_trial/01_bal_InSIDE/
 
 # load mr results
 all_thetas = c(0, 0.2, -0.2)
-all_paths = c(path_nodecor_mr, path_decor_mr, path_winner_mr, path_winner_decor_mr)
 all_prop_invalid = c(0.3, 0.5, 0.7)
-
-for (theta in all_thetas){
-	for (prop in all_prop_invalid){
-		for (path in all_paths){			
-			pattern = paste0("theta", theta, "_thetaU0.3_N50000_prop_invalid", prop)
-			input_paths = list.files(path, pattern=pattern, full.names=TRUE)
-			res = lapply(input_paths, eval_MR_summary, true_theta=theta)
-			res = do.call(rbind.data.frame, res)
-			write.table(res, file=paste0(path, "/", pattern, "_mr_mse_alpha.txt"), sep="\t", row.names=FALSE)
-		}
-	}	
-}
-
 outDir = "/mnt/data/xue/Data/04_MR_Overlap/02_trial/01_bal_InSIDE/02_run_mr/05_summary"
 
 for (theta in all_thetas){
