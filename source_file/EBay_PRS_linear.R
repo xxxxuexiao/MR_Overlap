@@ -26,8 +26,8 @@ EBay.PRS.linear <- function(zval, samp, nulltype=0, df=7, bre=120) {
   
   bias.corr.kernel<- function (zz,xout,bw="nrd0")
   {
-    density.obj=density(zz,bw=bw) # get probablity density from a numeric vector: https://d.cosx.org/d/143853-143853
-    fz.func = splinefun(density.obj$x, density.obj$y) # get corresponding function from (x,y) points: https://blog.csdn.net/Monique_Wu/article/details/81127457
+    density.obj=density(zz,bw=bw) 
+    fz.func = splinefun(density.obj$x, density.obj$y) 
     Psi.z = log(  fz.func(zz) /dnorm(zz)  )
     truez = D1ss(x= zz, y=Psi.z ,xout=xout)
     return(truez)
