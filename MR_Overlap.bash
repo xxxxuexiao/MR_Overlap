@@ -1,5 +1,5 @@
 # run different simulation paramaters for mr overlap
-cd /mnt/data/xue/Data/04_MR_Overlap/02_trial/01_bal_InSIDE
+cd /mnt/data/xue/Data/04_MR_Overlap/05_trial/01_bal_InSIDE
 
 # order in corresponding R vector
 # thetavec=(1 2 3)
